@@ -7,4 +7,6 @@ router.post('/create_item', DataController.add_data)
 
 router.get('/get-alldata', DataController.get_alldata)
 
+router.get('/get-onedata/:id', DataController.get_onedata)
+
 module.exports = router;

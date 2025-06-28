@@ -62,6 +62,30 @@ const DataController = {
             return res.json({ Error: "Internal server error" });
         }
     },
+
+    get_onedata: async (req, res) => {
+        try {
+            const recipeID = req.params.id; 
+
+            const sourceFile = path.join(__dirname, "../data/Data.json");
+            fs.readFile(sourceFile, "utf8", (err, data) => {
+                if (err) {
+                    return res.json({ Error: "No data found..." });
+                }
+                try {
+                    const jsondata = JSON.parse(data);
+                    const item = jsondata.find((entry) => entry.id === recipeID);
+
+                    return res.json({ Status: "Success", Result: item || null });
+                } catch (parseErr) {
+                    return res.json({ Error: "Data parsing error" });
+                }
+            });
+        } catch (err) {
+            console.log(err);
+            return res.json({ Error: "Internal server error" });
+        }
+    }
 };
 
 module.exports = DataController;
