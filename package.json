@@ -7,8 +7,10 @@
     "start": "nodemon index.js"
   },
   "dependencies": {
+    "coconutdb": "^3.0.0-beta",
     "express": "^4.21.2",
     "fs": "^0.0.1-security",
+    "joi": "^17.13.3",
     "nodemon": "^3.1.9",
     "path": "^0.12.7"
   },
