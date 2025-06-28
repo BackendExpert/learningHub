@@ -39,6 +39,17 @@ const DataController = {
                 error: err.message
             });
         }
+    }, 
+
+    get_alldata: async(req, res) => {
+        try{
+            const alldata = await DataModel.findAll()
+
+            return res.json({ Result: alldata })
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 };
 
