@@ -5,8 +5,8 @@ const DataSchema = Joi.object({
     main_title: Joi.string().required(),
     subject: Joi.string().required(),
     cetogray: Joi.string().required(),
-    
-    
+    desc: Joi.string().required(),
+    link: Joi.string().required()            
 });
 
 class DataModel extends Model {
