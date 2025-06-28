@@ -10,4 +10,4 @@ app.use('/', (req, res) => {
 })
 
 
-app.listen(5000, console.log("Server Started on PORT 5000"))
+module.exports = app;
