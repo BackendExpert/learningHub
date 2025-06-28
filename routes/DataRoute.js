@@ -1,18 +1,8 @@
-const Joi = require('joi');
-const Model = require('coconutdb');
+const express = require('express');
+const DataController = require('../controllers/DataController');
 
-const DataSchema = Joi.object({
-    main_title: Joi.string().required(),
-    subject: Joi.string().required(),
-    cetogray: Joi.string().required(),
-    desc: Joi.string().required(),
-    link: Joi.string().required()            
-});
+const router = express.Router();
 
-class DataModel extends Model {
-    constructor() {
-        super('Data', DataSchema);
-    }
-}
+router.post('/create_item', DataController.add_data)
 
-module.exports = new DataModel();
+module.exports = router;

@@ -1,6 +1,12 @@
 const express = require('express')
 const app = express()
 
+const DataRoute = require('./routes/DataRoute')
+
+app.use(express.json());
+
+app.use('/data', DataRoute)
+
 app.use('/', (req, res) => {
     res.send("Server is Running on 5000")
 })
