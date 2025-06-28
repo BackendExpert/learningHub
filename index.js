@@ -3,8 +3,6 @@ const app = express()
 
 const DataRoute = require('./routes/DataRoute')
 
-app.use(express.json());
-
 app.use('/data', DataRoute)
 
 app.use('/', (req, res) => {
